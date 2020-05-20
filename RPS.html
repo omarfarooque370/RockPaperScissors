@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>
+        Let's play Rock Paper Scissors!
+    </h1>
+
+<script>
+var player=3;//To come out of the while loop
+var computer;
+var userscore=0;
+var compscore=0;
+var bycomputer;
+var byuser;
+var result;
+
+for(var a=1;a<=6;a++){
+
+while(true){
+var user=prompt("Bushra - Select from Rock(R)/Paper(P)/Scissors(S)?");
+
+if(user.toLowerCase()==="r"){player=0; byuser="Rock"; break; }
+if(user.toLowerCase()==="p"){player=1; byuser="Paper";break;}
+if(user.toLowerCase()==="s"){player=2; byuser="Scissor"; break; }
+
+if(parseInt(player)===3){ 
+    alert("Check your entry!");
+}
+}
+while(true){
+var comp=Math.floor(Math.random()*10);
+if (comp<=2){
+computer=comp;
+if(computer===0){bycomputer="Rock"}
+if(computer===1){bycomputer="Paper"}
+if(computer===2){bycomputer="Scissors"}
+break;
+}
+}
+
+
+if(computer===0){ 
+    if(player===1){userscore++; result="Barirah Bushra Wins!";}
+    if(player===2){compscore++; result="Computer Wins!";}
+    if(player===0){result=("It's a Tie!");}
+}
+if(computer===1){
+    if(player===0){compscore++; result="Computer Wins!";}
+    if(player===2){userscore++;result="Barirah Bushra Wins!";}
+    if(player===1){result=("It's a Tie!");}
+}
+if(computer===2){
+    if(player===0){userscore++;result="Barirah Bushra Wins!";}
+    if(player===1){compscore++; result="Computer Wins!";}
+    if(player===2){result=("It's a Tie!");}
+}
+
+alert("Barirah Bushra entered "+byuser+" and Computer guessed "+bycomputer+" so "+result);
+alert("Barirah Bushra's scored : "+(parseInt(userscore)+ "  Computer scored : "+(parseInt(compscore))));
+
+}
+alert("Game Over !");
+
+</script> 
+</body>
+</html>
